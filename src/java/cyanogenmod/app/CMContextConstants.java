@@ -17,10 +17,10 @@
 package cyanogenmod.app;
 
 /**
- * @hide
- * TODO: We need to somehow make these managers accessible via getSystemService
+ * Constants to be used with {@link android.content.Context#getSystemService}
+ * to retrieve published system services
  */
-public final class CMContextConstants {
+public class CMContextConstants {
 
     /**
      * @hide

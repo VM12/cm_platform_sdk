@@ -84,8 +84,7 @@ public class CMStatusBarManager {
      * the same id has already been posted by your application and has not yet been removed, it
      * will be replaced by the updated information.
      *
-     * You will need the cyanogenmod.permission.PUBLISH_CUSTOM_TILE
-     * to utilize this functionality.
+     * You will need the android.permission.PUBLISH_CUSTOM_TILE to utilize this functionality.
      *
      * @param id An identifier for this customTile unique within your
      *        application.
@@ -101,8 +100,7 @@ public class CMStatusBarManager {
      * the same tag and id has already been posted by your application and has not yet been
      * removed, it will be replaced by the updated information.
      *
-     * You will need the cyanogenmod.permission.PUBLISH_CUSTOM_TILE
-     * to utilize this functionality.
+     * You will need the android.permission.PUBLISH_CUSTOM_TILE to utilize this functionality.
      *
      * @param tag A string identifier for this custom tile.  May be {@code null}.
      * @param id An identifier for this custom tile.  The pair (tag, id) must be unique
@@ -134,8 +132,7 @@ public class CMStatusBarManager {
      * Similar to {@link cyanogenmod.app.CMStatusBarManager#publishTile(int id, cyanogenmod.app.CustomTile)},
      * however lets you specify a {@link android.os.UserHandle}
      *
-     * You will need the cyanogenmod.permission.PUBLISH_CUSTOM_TILE
-     * to utilize this functionality.
+     * You will need the android.permission.PUBLISH_CUSTOM_TILE to utilize this functionality.
      *
      * @param tag A string identifier for this custom tile.  May be {@code null}.
      * @param id An identifier for this custom tile.  The pair (tag, id) must be unique
@@ -167,8 +164,7 @@ public class CMStatusBarManager {
     /**
      * Remove a custom tile that's currently published to the StatusBarPanel.
      *
-     * You will need the cyanogenmod.permission.PUBLISH_CUSTOM_TILE
-     * to utilize this functionality.
+     * You will need the android.permission.PUBLISH_CUSTOM_TILE to utilize this functionality.
      *
      * @param id The identifier for the custom tile to be removed.
      */
@@ -179,8 +175,7 @@ public class CMStatusBarManager {
     /**
      * Remove a custom tile that's currently published to the StatusBarPanel.
      *
-     * You will need the cyanogenmod.platform.PUBLISH_CUSTOM_TILE
-     * to utilize this functionality.
+     * You will need the android.permission.PUBLISH_CUSTOM_TILE to utilize this functionality.
      *
      * @param tag The string identifier for the custom tile to be removed.
      * @param id The identifier for the custom tile to be removed.
@@ -204,8 +199,7 @@ public class CMStatusBarManager {
      * Similar to {@link cyanogenmod.app.CMStatusBarManager#removeTile(String tag, int id)}
      * however lets you specific a {@link android.os.UserHandle}
      *
-     * You will need the cyanogenmod.platform.PUBLISH_CUSTOM_TILE
-     * to utilize this functionality.
+     * You will need the android.permission.PUBLISH_CUSTOM_TILE to utilize this functionality.
      *
      * @param tag The string identifier for the custom tile to be removed.
      * @param id The identifier for the custom tile to be removed.

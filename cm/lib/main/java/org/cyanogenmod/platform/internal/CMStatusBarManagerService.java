@@ -45,7 +45,7 @@ import org.cyanogenmod.internal.statusbar.IStatusBarCustomTileHolder;
 
 import java.util.ArrayList;
 
-import org.cyanogenmod.platform.internal.R;
+import com.android.internal.R;
 
 /**
  * Internal service which manages interactions with system ui elements
@@ -338,13 +338,13 @@ public class CMStatusBarManagerService extends SystemService {
 
     private void enforceCustomTilePublish() {
         mContext.enforceCallingOrSelfPermission(
-                cyanogenmod.platform.Manifest.permission.PUBLISH_CUSTOM_TILE,
+                android.Manifest.permission.PUBLISH_CUSTOM_TILE,
                 "StatusBarManagerService");
     }
 
     private void enforceBindCustomTileListener() {
         mContext.enforceCallingOrSelfPermission(
-                cyanogenmod.platform.Manifest.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE,
+                android.Manifest.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE,
                 "StatusBarManagerService");
     }
 
@@ -354,6 +354,8 @@ public class CMStatusBarManagerService extends SystemService {
     }
 
     public class CustomTileListeners extends ManagedServices {
+
+        private final ArraySet<ManagedServiceInfo> mLightTrimListeners = new ArraySet<>();
 
         public CustomTileListeners() {
             super(CMStatusBarManagerService.this.mContext, mHandler, mQSTileList, mUserProfiles);
@@ -366,8 +368,7 @@ public class CMStatusBarManagerService extends SystemService {
             c.serviceInterface = CustomTileListenerService.SERVICE_INTERFACE;
             //TODO: Implement this in the future
             //c.secureSettingName = Settings.Secure.ENABLED_CUSTOM_TILE_LISTENERS;
-            c.bindPermission =
-                    cyanogenmod.platform.Manifest.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE;
+            c.bindPermission = android.Manifest.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE;
             //TODO: Implement this in the future
             //c.settingsAction = Settings.ACTION_CUSTOM_TILE_LISTENER_SETTINGS;
             c.clientLabel = R.string.custom_tile_listener_binding_label;
@@ -391,6 +392,7 @@ public class CMStatusBarManagerService extends SystemService {
 
         @Override
         protected void onServiceRemovedLocked(ManagedServiceInfo removed) {
+            mLightTrimListeners.remove(removed);
         }
 
 
